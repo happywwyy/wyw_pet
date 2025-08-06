@@ -1,0 +1,389 @@
+/* 主容器 */
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* 状态栏 */
+.statusBar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 0 0 20px 20px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.statusContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.appTitle {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.statusIcons {
+  display: flex;
+  gap: 8px;
+}
+
+.weatherIcon {
+  font-size: 18px;
+}
+
+.greeting {
+  color: #666;
+  font-size: 14px;
+  text-align: center;
+  padding: 8px 12px;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 12px;
+  border-left: 3px solid #667eea;
+}
+
+/* 宠物管理区域 */
+.petManagement {
+  padding: 0 16px 20px;
+}
+
+.managementHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.addButton {
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.petList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 宠物卡片 */
+.petCard {
+  margin: 0;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+  border: none;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.petHeader {
+  padding: 16px;
+}
+
+.petBasicInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.petEmoji {
+  font-size: 40px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.petDetails {
+  flex: 1;
+}
+
+.petName {
+  font-size: 16px;
+  font-weight: bold;
+  color: #2d3436;
+  margin: 0 0 4px 0;
+}
+
+.petInfo {
+  font-size: 12px;
+  color: #636e72;
+  margin-bottom: 4px;
+}
+
+.petActions {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.petStatus {
+  margin-top: 4px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #2d3436;
+  font-size: 14px;
+}
+
+.infoIcon {
+  font-size: 16px;
+}
+
+/* 快捷功能区 */
+.quickActions {
+  padding: 0 16px 20px;
+}
+
+.sectionTitle {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 12px 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.actionItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 8px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.actionItem:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.actionIcon {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.actionName {
+  font-size: 12px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* 今日提醒 */
+.todayReminder {
+  padding: 0 16px 20px;
+}
+
+.reminderHeader {
+  margin-bottom: 12px;
+}
+
+.todoCard {
+  margin: 0;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.todoItem {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.todoItem:last-child {
+  border-bottom: none;
+}
+
+.completedTask {
+  color: #00b894;
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.pendingTask {
+  color: #2d3436;
+  font-weight: 500;
+}
+
+/* 表单容器 */
+.formContainer {
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.formHeader {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.formHeader h2 {
+  margin: 0;
+  color: #333;
+  font-size: 18px;
+}
+
+.form {
+  margin-bottom: 20px;
+}
+
+.formActions {
+  display: flex;
+  gap: 12px;
+  padding: 20px 0;
+  position: sticky;
+  bottom: 0;
+  background: white;
+  border-top: 1px solid #eee;
+}
+
+.formActions .rv-button {
+  flex: 1;
+}
+
+/* 详情弹窗 */
+.detailContainer {
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.detailHeader {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.detailEmoji {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.detailHeader h2 {
+  margin: 0;
+  color: #333;
+  font-size: 20px;
+}
+
+.detailContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.detailSection h3 {
+  margin: 0 0 12px 0;
+  color: #333;
+  font-size: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.detailItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.detailLabel {
+  font-weight: 500;
+  color: #666;
+  font-size: 14px;
+}
+
+.notes {
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 0;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* 底部间距 */
+.bottomSpacer {
+  height: 80px;
+}
+
+/* 响应式适配 */
+@media (max-width: 375px) {
+  .statusBar {
+    padding: 12px;
+  }
+  
+  .petManagement, .quickActions, .todayReminder {
+    padding: 0 12px 16px;
+  }
+  
+  .actionItem {
+    padding: 12px 6px;
+  }
+  
+  .actionIcon {
+    font-size: 20px;
+  }
+  
+  .actionName {
+    font-size: 11px;
+  }
+  
+  .formContainer, .detailContainer {
+    padding: 16px;
+  }
+}
+
+/* 动画效果 */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.petCard, .todoCard {
+  animation: slideUp 0.6s ease-out;
+}
+
+.actionItem {
+  animation: slideUp 0.6s ease-out;
+}
+
+.actionItem:nth-child(1) { animation-delay: 0.1s; }
+.actionItem:nth-child(2) { animation-delay: 0.2s; }
+.actionItem:nth-child(3) { animation-delay: 0.3s; }
+.actionItem:nth-child(4) { animation-delay: 0.4s; }
