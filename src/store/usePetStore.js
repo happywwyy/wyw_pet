@@ -10,13 +10,14 @@ export const usePetStore = create((set, get) => ({
     set({ loading: true })
     try {
       const res = await getPets()
+      const petsData = res.data || res
       set({ 
-        pets: res.data || res,
+        pets: Array.isArray(petsData) ? petsData : [],
         loading: false 
       })
     } catch (error) {
       console.error('获取宠物列表失败:', error)
-      set({ loading: false })
+      set({ pets: [], loading: false })
     }
   },
   
@@ -27,7 +28,7 @@ export const usePetStore = create((set, get) => ({
       const res = await addPet(petData)
       const newPet = res.data || res
       set((state) => ({ 
-        pets: [...state.pets, newPet],
+        pets: Array.isArray(state.pets) ? [...state.pets, newPet] : [newPet],
         loading: false 
       }))
       return newPet
@@ -45,9 +46,9 @@ export const usePetStore = create((set, get) => ({
       const res = await updatePet(id, petData)
       const updatedPet = res.data || res
       set((state) => ({
-        pets: state.pets.map(pet => 
+        pets: Array.isArray(state.pets) ? state.pets.map(pet => 
           pet.id === id ? updatedPet : pet
-        ),
+        ) : [],
         loading: false
       }))
       return updatedPet
@@ -64,7 +65,7 @@ export const usePetStore = create((set, get) => ({
     try {
       await deletePet(id)
       set((state) => ({
-        pets: state.pets.filter(pet => pet.id !== id),
+        pets: Array.isArray(state.pets) ? state.pets.filter(pet => pet.id !== id) : [],
         loading: false
       }))
     } catch (error) {

@@ -1,0 +1,148 @@
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.wrapper {
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    margin: 0 16px;
+    border-radius: 16px 16px 0 0;
+    padding: 20px;
+}
+
+/* 搜索历史 */
+.history {
+    margin-bottom: 24px;
+}
+
+.historyHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.historyHeader h2 {
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+}
+
+.clearButton {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 12px;
+    transition: background-color 0.2s ease;
+}
+
+.clearButton:active {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.clearIcon {
+    font-size: 14px;
+}
+
+.historyList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.historyItem {
+    background: #f0f0f0;
+    border-radius: 16px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.historyItem:active {
+    background: #e0e0e0;
+    transform: scale(0.95);
+}
+
+/* 热门推荐 */
+.hot {
+    margin-bottom: 24px;
+}
+
+.hot h2 {
+    font-size: 16px;
+    color: #333;
+    margin: 0 0 12px 0;
+}
+
+.hotGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.hotItem {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.hotItem:active {
+    transform: scale(0.95);
+}
+
+/* 搜索建议 */
+.suggest {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.suggest h2 {
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+    padding: 16px;
+    background: #f8f9fa;
+}
+
+.suggestItem {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.suggestItem:last-child {
+    border-bottom: none;
+}
+
+.suggestItem:active {
+    background: #f8f9fa;
+}
+

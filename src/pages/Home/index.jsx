@@ -231,7 +231,7 @@ const Home = () => {
         </div>
 
         {/* 宠物列表 */}
-        {pets.length > 0 ? (
+        {Array.isArray(pets) && pets.length > 0 ? (
           <div className={styles.petList}>
             {pets.map(pet => (
               <Card key={pet.id} className={styles.petCard}>

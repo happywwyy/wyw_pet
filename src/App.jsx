@@ -17,6 +17,7 @@ import Toast from '@/components/Toast'
 
 const Home = lazy(() => import('@/pages/Home'))
 const Shop = lazy(() => import('@/pages/Shop'))
+const ShopSearch = lazy(() => import('@/pages/ShopSearch'))
 const Collection = lazy(() => import('@/pages/Collection'))
 const Community = lazy(() => import('@/pages/Community'))
 const Account = lazy(() => import('@/pages/Account'))
@@ -43,6 +44,7 @@ function App() {
               <Route element={<BlankLayout />}>
                 <Route path="/login" element={<Login />} />
                 <Route path="/detail/:id" element={<Detail />} />
+                <Route path="/shop/search" element={<ShopSearch />} />
               </Route>
             </Routes>
        </Suspense>

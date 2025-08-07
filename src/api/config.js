@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-axios.defaults.baseURL = 'http://localhost:5173/api'
+// 开发环境下不设置baseURL，让Vite mock插件处理
+// axios.defaults.baseURL = 'http://localhost:5174'
 
 axios.interceptors.request.use((config) => {
   const token = localStorage.getItem('token') || ''

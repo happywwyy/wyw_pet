@@ -7,9 +7,9 @@ import {
 } from 'react-vant';
 import {
   HomeO,
-  Search,
-  FriendsO,
-  SettingO,
+  ShopO,
+  GiftO,
+  ServiceO,
   UserO
 } from '@react-vant/icons';
 import {
@@ -21,10 +21,10 @@ import {
 //菜单栏配置 - 宠物主题
 const tabs = [
   { icon: <HomeO />, title: '首页', path: '/home'},
-  { icon: <Search />, title: '宠物商城', path: '/shop'},
-  { icon: <FriendsO />, title: '我的收藏', path: '/collection'},
-  { icon: <SettingO />, title: '宠物社区', path: '/community'},
-  { icon: <UserO />, title: '我的账户', path: '/account'}
+  { icon: <ShopO />, title: '商城', path: '/shop'},
+  { icon: <GiftO />, title: '宠物衣柜', path: '/collection'},
+  { icon: <ServiceO />, title: 'AI超级医生', path: '/community'},
+  { icon: <UserO />, title: '我的', path: '/account'}
 ]
 
 const MainLayout = () => {

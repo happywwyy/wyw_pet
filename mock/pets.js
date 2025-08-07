@@ -3,59 +3,50 @@ let pets = [
   {
     id: 1,
     name: '小白',
-    type: '猫咪',
+    species: '猫',
     breed: '英国短毛猫',
     age: 2,
     gender: '雌性',
     color: '白色',
-    weight: 3.5,
-    avatar: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=200&h=200&fit=crop&crop=face',
-    description: '温顺可爱的小白猫，喜欢晒太阳和玩毛线球',
-    vaccinated: true,
-    sterilized: false,
-    adoptionDate: '2022-03-15',
-    owner: {
-      name: '张小明',
-      phone: '13888888888'
-    }
+    weight: '3.5',
+    birthday: '2021-03-15',
+    owner: '张小明',
+    phone: '13888888888',
+    address: '北京市朝阳区',
+    healthStatus: '健康',
+    notes: '温顺可爱的小白猫，喜欢晒太阳和玩毛线球'
   },
   {
     id: 2,
     name: '大黄',
-    type: '狗狗',
+    species: '狗',
     breed: '金毛寻回犬',
     age: 3,
     gender: '雄性',
     color: '金黄色',
-    weight: 28.5,
-    avatar: 'https://images.unsplash.com/photo-1552053831-71594a27632d?w=200&h=200&fit=crop&crop=face',
-    description: '活泼友善的金毛犬，很喜欢游泳和捡球',
-    vaccinated: true,
-    sterilized: true,
-    adoptionDate: '2021-08-20',
-    owner: {
-      name: '李小红',
-      phone: '13999999999'
-    }
+    weight: '28.5',
+    birthday: '2020-08-20',
+    owner: '李小红',
+    phone: '13999999999',
+    address: '上海市浦东新区',
+    healthStatus: '健康',
+    notes: '活泼友善的金毛犬，很喜欢游泳和捡球'
   },
   {
     id: 3,
     name: '花花',
-    type: '兔子',
-    breed: '荷兰兔',
+    species: '猫',
+    breed: '布偶猫',
     age: 1,
     gender: '雌性',
-    color: '黑白相间',
-    weight: 1.2,
-    avatar: 'https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?w=200&h=200&fit=crop&crop=face',
-    description: '可爱的小兔子，喜欢吃胡萝卜和青菜',
-    vaccinated: true,
-    sterilized: false,
-    adoptionDate: '2023-01-10',
-    owner: {
-      name: '王小华',
-      phone: '13777777777'
-    }
+    color: '蓝白色',
+    weight: '4.2',
+    birthday: '2023-01-10',
+    owner: '王小华',
+    phone: '13777777777',
+    address: '广州市天河区',
+    healthStatus: '健康',
+    notes: '可爱的布偶猫，性格温顺，喜欢被抱着'
   }
 ]
 
