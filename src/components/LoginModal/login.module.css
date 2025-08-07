@@ -1,0 +1,139 @@
+.popup {
+  background: transparent;
+}
+
+.container {
+  background: white;
+  border-radius: 20px 20px 0 0;
+  padding: 0;
+  min-height: 500px;
+}
+
+.header {
+  text-align: center;
+  padding: 30px 20px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 20px 20px 0 0;
+}
+
+.header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.header p {
+  font-size: 14px;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.tabs {
+  padding: 0 20px;
+}
+
+.tabs :global(.rv-tabs__nav) {
+  background: transparent;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.tabs :global(.rv-tab) {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.tabs :global(.rv-tab--active) {
+  color: #667eea;
+}
+
+.tabs :global(.rv-tabs__line) {
+  background: #667eea;
+}
+
+.formContainer {
+  padding: 20px 0 30px;
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+.field :global(.rv-field__label) {
+  color: #333;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.field :global(.rv-field__control) {
+  font-size: 15px;
+}
+
+.field :global(.rv-field__body) {
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 12px 16px;
+  background: #fafafa;
+  transition: all 0.3s ease;
+}
+
+.field :global(.rv-field__body:focus-within) {
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.tips {
+  text-align: center;
+  margin: 16px 0;
+}
+
+.tips p {
+  font-size: 12px;
+  color: #999;
+  background: #f5f5f5;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin: 0;
+  display: inline-block;
+}
+
+.submitBtn {
+  margin-top: 20px;
+  height: 48px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+}
+
+.submitBtn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+}
+
+.submitBtn:global(.rv-button--loading) {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* 响应式设计 */
+@media (max-width: 375px) {
+  .header {
+    padding: 25px 15px 15px;
+  }
+  
+  .header h2 {
+    font-size: 20px;
+  }
+  
+  .tabs {
+    padding: 0 15px;
+  }
+  
+  .formContainer {
+    padding: 15px 0 25px;
+  }
+}
