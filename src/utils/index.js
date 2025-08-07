@@ -35,3 +35,4 @@ export const formatSales = (sales) => {
   }
   return sales.toString();
 };
+

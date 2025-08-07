@@ -20,6 +20,8 @@ const Shop = lazy(() => import('@/pages/Shop'))
 const ShopSearch = lazy(() => import('@/pages/ShopSearch'))
 const Collection = lazy(() => import('@/pages/Collection'))
 const Community = lazy(() => import('@/pages/Community'))
+const AiDoctor = lazy(() => import('@/pages/AiDoctor'))
+const PetWardrobe = lazy(() => import('@/pages/PetWardrobe'))
 const Account = lazy(() => import('@/pages/Account'))
 const Detail = lazy(() => import('@/pages/Detail'))
 const Login = lazy(() => import('@/pages/Login'))
@@ -36,7 +38,8 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/shop" element={<Shop />} />
               <Route path="/collection" element={<Collection />} />
-              <Route path="/community" element={<Community />} />
+              <Route path="/ai-doctor" element={<AiDoctor />} />
+              <Route path="/pet-wardrobe" element={<PetWardrobe />} />
               <Route path="/account" element={<Account />} />
             </Route>
             

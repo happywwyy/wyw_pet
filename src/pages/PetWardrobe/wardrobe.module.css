@@ -1,0 +1,255 @@
+/* 宠物衣柜页面样式 */
+.container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffeef8 0%, #f0f8ff 100%);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 28px;
+    color: #2c3e50;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #7f8c8d;
+    margin: 0;
+}
+
+.content {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+/* 左侧输入区域 */
+.inputSection {
+    flex: 1;
+    min-width: 320px;
+}
+
+.uploadArea {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.imagePreview {
+    position: relative;
+    text-align: center;
+}
+
+.imagePreview img {
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #e9ecef;
+}
+
+.uploadOverlay {
+    margin-top: 15px;
+}
+
+/* 设置面板 */
+.settingsPanel {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.settingGroup {
+    margin-bottom: 20px;
+}
+
+.settingGroup:last-child {
+    margin-bottom: 0;
+}
+
+.label {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #2c3e50;
+    background: white;
+    transition: border-color 0.3s ease;
+}
+
+.select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* 生成按钮区域 */
+.generateSection {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.generateBtn {
+    background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    height: 56px;
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.generateBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 107, 157, 0.3);
+}
+
+.generateBtn:active {
+    transform: translateY(0);
+}
+
+/* 右侧结果展示区域 */
+.outputSection {
+    flex: 1;
+    min-width: 320px;
+}
+
+.resultArea {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* 加载状态 */
+.loadingArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.loadingText {
+    font-size: 16px;
+    color: #7f8c8d;
+    margin: 0;
+}
+
+/* 状态消息 */
+.statusMessage {
+    color: #3498db;
+    font-size: 16px;
+}
+
+.statusMessage p {
+    margin: 0;
+}
+
+/* 结果图片 */
+.resultImage {
+    width: 100%;
+}
+
+.resultImage img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.resultActions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+/* 占位符 */
+.placeholder {
+    color: #95a5a6;
+}
+
+.placeholderIcon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.placeholder p {
+    margin: 8px 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: 16px;
+    }
+    
+    .content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .title {
+        font-size: 24px;
+    }
+    
+    .subtitle {
+        font-size: 14px;
+    }
+    
+    .settingsPanel,
+    .uploadArea,
+    .generateSection,
+    .resultArea {
+        padding: 16px;
+    }
+    
+    .generateBtn {
+        font-size: 16px;
+        height: 48px;
+    }
+    
+    .resultActions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .resultActions button {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+

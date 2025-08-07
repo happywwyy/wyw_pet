@@ -8,9 +8,9 @@ import {
 import {
   HomeO,
   ShopO,
-  GiftO,
   ServiceO,
-  UserO
+  UserO,
+  Gift
 } from '@react-vant/icons';
 import {
   Outlet,
@@ -22,8 +22,8 @@ import {
 const tabs = [
   { icon: <HomeO />, title: '首页', path: '/home'},
   { icon: <ShopO />, title: '商城', path: '/shop'},
-  { icon: <GiftO />, title: '宠物衣柜', path: '/collection'},
-  { icon: <ServiceO />, title: 'AI超级医生', path: '/community'},
+  { icon: <Gift />, title: '宠物衣柜', path: '/pet-wardrobe'},
+  { icon: <ServiceO />, title: 'AI医生', path: '/ai-doctor'},
   { icon: <UserO />, title: '我的', path: '/account'}
 ]
 
