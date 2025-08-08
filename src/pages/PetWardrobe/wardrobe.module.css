@@ -1,9 +1,109 @@
 /* 宠物衣柜页面样式 */
 .container {
     min-height: 100vh;
-    background: linear-gradient(135deg, #ffeef8 0%, #f0f8ff 100%);
+    /* 与首页一致的紫蓝渐变背景 */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     padding: 20px;
     box-sizing: border-box;
+    display: flex;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+/* 兼容当前页面实际使用的类名，做两栏卡片式排版 */
+.input,
+.output {
+    flex: 1;
+    min-width: 320px;
+}
+
+.fileInput {
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    margin-bottom: 16px;
+}
+
+.preview {
+    width: 100%;
+    max-width: 520px;
+    border-radius: 16px;
+    display: block;
+    margin: 8px 0 16px 0;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+.settings {
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    margin-bottom: 16px;
+}
+
+.selection {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.selection label {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.selection select,
+.selection input[type="number"] {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 2px solid #e9ecef;
+    background: #fff;
+}
+
+.generate {
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.generate button {
+    width: 100%;
+    height: 48px;
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 10px 24px rgba(102, 126, 234, 0.35);
+}
+
+.output {
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.generated {
+    min-height: 520px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.generated img {
+    width: 100%;
+    max-width: 520px;
+    border-radius: 16px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
 }
 
 .header {
@@ -215,42 +315,9 @@
 @media (max-width: 768px) {
     .container {
         padding: 16px;
-    }
-    
-    .content {
         flex-direction: column;
-        gap: 20px;
     }
-    
-    .title {
-        font-size: 24px;
-    }
-    
-    .subtitle {
-        font-size: 14px;
-    }
-    
-    .settingsPanel,
-    .uploadArea,
-    .generateSection,
-    .resultArea {
-        padding: 16px;
-    }
-    
-    .generateBtn {
-        font-size: 16px;
-        height: 48px;
-    }
-    
-    .resultActions {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .resultActions button {
-        width: 100%;
-        max-width: 200px;
-    }
+    .generated { min-height: 360px; }
 }
 
 

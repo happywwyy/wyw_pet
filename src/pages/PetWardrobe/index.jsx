@@ -3,7 +3,7 @@ import styles from './wardrobe.module.css'
 
 export default function PetWardrobe() {
     const workflowUrl = 'https://api.coze.cn/v1/workflow/run'
-    const workflow_id = '7533134823737884723'
+    const workflow_id = '7508417030077628450'
 
     const patToken = import.meta.env.VITE_PAT_TOKEN
     const uploadUrl = 'https://api.coze.cn/v1/files/upload'
@@ -16,6 +16,9 @@ export default function PetWardrobe() {
     const [style, setStyle] = useState('写实')
     const [imgUrl, setImgUrl] = useState('')
     const [status, setStatus] = useState('')
+    const submittingRef = useRef(false)
+
+    const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 
     const updateImageData = () => {
         const input = uploadImageRef.current
@@ -46,36 +49,72 @@ export default function PetWardrobe() {
     const generate = async () => {
         // 环境检查
         if (!patToken) { setStatus('错误：未配置PAT Token'); return }
+        if (submittingRef.current) { return }
+        submittingRef.current = true
         setStatus('图片上传中...')
         const file_id = await uploadFile()
-        if (!file_id) return
+        if (!file_id) { submittingRef.current = false; return }
         setStatus('图片上传成功，正在生成...')
         const parameters = {
             picture: { file_id },
             style,
-            uniform_number,
+            uniform_number: Number(uniform_number),
+            // 同时传递两种命名，兼容开始节点中可能的拼写为 uiniform_color
             uniform_color,
-            position,
-            shooting_hand,
+            uiniform_color: uniform_color,
+            position: Number(position),
+            shooting_hand: Number(shooting_hand),
         }
         try {
-            const res = await fetch(workflowUrl, {
-                method: 'POST',
-                headers: {
-                    Authorization: `Bearer ${patToken}`,
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ workflow_id, parameters }),
-            })
-            if (!res.ok) throw new Error(`HTTP错误: ${res.status} ${res.statusText}`)
-            const ret = await res.json()
-            if (ret.code !== 0) { setStatus(ret.msg); return }
-            const data = JSON.parse(ret.data)
-            setStatus('')
-            setImgUrl(data.answer)
+            let attempt = 0
+            let lastErrMsg = ''
+            while (attempt < 3) {
+                const res = await fetch(workflowUrl, {
+                    method: 'POST',
+                    headers: {
+                        Authorization: `Bearer ${patToken}`,
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ workflow_id, parameters }),
+                })
+                if (!res.ok) throw new Error(`HTTP错误: ${res.status} ${res.statusText}`)
+                const ret = await res.json()
+                if (ret.code === 0) {
+                    const payload = JSON.parse(ret.data)
+                    setStatus('')
+                    let imageUrl = ''
+                    if (typeof payload === 'string') {
+                        imageUrl = payload
+                    } else if (payload.answer) {
+                        imageUrl = payload.answer
+                    } else if (payload.data) {
+                        if (typeof payload.data === 'string') {
+                            imageUrl = payload.data
+                        } else {
+                            imageUrl = payload.data.url || payload.data.image_url || ''
+                        }
+                    } else if (payload.url) {
+                        imageUrl = payload.url
+                    }
+                    setImgUrl(imageUrl)
+                    break
+                }
+                lastErrMsg = ret.msg || ''
+                const isRateLimit = /rate[-\s]?limited|Too Many Requests|429/i.test(lastErrMsg)
+                if (!isRateLimit) { setStatus(lastErrMsg); break }
+                attempt += 1
+                const waitMs = attempt === 1 ? 3000 : attempt === 2 ? 8000 : 15000
+                setStatus(`请求过于频繁，${Math.ceil(waitMs/1000)}秒后自动重试(${attempt}/3)...`)
+                await sleep(waitMs)
+            }
+            if (attempt >= 3 && lastErrMsg) {
+                setStatus(`请求过于频繁，请稍后再试: ${lastErrMsg}`)
+            }
         } catch (error) {
             console.error('API调用错误:', error)
             setStatus(`错误: ${error.message}`)
+        } finally {
+            submittingRef.current = false
         }
     }
 
