@@ -11,3 +11,7 @@ Write-Host "VITE_KIMI_API_KEY: $($env:VITE_KIMI_API_KEY.Substring(0,10))..." -Fo
 Write-Host "启动开发服务器..." -ForegroundColor Green
 npm run dev
 
+
+
+
+
